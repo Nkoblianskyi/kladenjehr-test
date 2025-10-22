@@ -44,7 +44,7 @@ export function RatingList({ sites }: RatingListProps) {
       return {
         container:
           "bg-gradient-to-br from-amber-50 via-white to-blue-50 border-2 border-yellow-500 shadow-lg hover:shadow-xl transition-shadow",
-        logo: "bg-white/80 backdrop-blur-sm border-r border-yellow-200 rounded-l-lg",
+        logo: "bg-black border-r border-yellow-200 rounded-l-lg",
         content: "bg-white/80 backdrop-blur-sm",
         badge: "bg-yellow-500 text-white",
         borderColor: "border-yellow-500",
@@ -53,7 +53,7 @@ export function RatingList({ sites }: RatingListProps) {
       return {
         container:
           "bg-gradient-to-br from-slate-50 via-white to-gray-50 border-2 border-gray-400 shadow-lg hover:shadow-xl transition-shadow",
-        logo: "bg-white/80 backdrop-blur-sm border-r border-gray-300 rounded-l-lg",
+        logo: "bg-black border-r border-gray-300 rounded-l-lg",
         content: "bg-white/80 backdrop-blur-sm",
         badge: "bg-gray-400 text-white",
         borderColor: "border-gray-400",
@@ -62,7 +62,7 @@ export function RatingList({ sites }: RatingListProps) {
       return {
         container:
           "bg-gradient-to-br from-orange-50 via-white to-amber-50 border-2 border-orange-500 shadow-lg hover:shadow-xl transition-shadow",
-        logo: "bg-white/80 backdrop-blur-sm border-r border-orange-200 rounded-l-lg",
+        logo: "bg-black border-r border-orange-200 rounded-l-lg",
         content: "bg-white/80 backdrop-blur-sm",
         badge: "bg-orange-500 text-white",
         borderColor: "border-orange-500",
@@ -71,7 +71,7 @@ export function RatingList({ sites }: RatingListProps) {
       return {
         container:
           "bg-gradient-to-br from-blue-50 via-white to-red-50 border-2 border-blue-300 shadow-md hover:shadow-lg transition-shadow",
-        logo: "bg-white/80 backdrop-blur-sm border-r border-blue-200 rounded-l-lg",
+        logo: "bg-black border-r border-blue-200 rounded-l-lg",
         content: "bg-white/80 backdrop-blur-sm",
         badge: "bg-blue-500 text-white",
         borderColor: "border-blue-300",
@@ -121,7 +121,7 @@ export function RatingList({ sites }: RatingListProps) {
                         BONUS DOBRODOŠLICE
                       </p>
                       <h3 className="text-2xl font-bold leading-tight text-gray-900">{site.bonus}</h3>
-                      {site.dopBonus && <p className="text-xl font-semibold mt-1 text-red-600">{site.dopBonus}</p>}
+                      {site.dopBonus && <p className="text-xl font-semibold mt-1 text-black">{site.dopBonus}</p>}
                     </div>
 
                     <div className="flex flex-col items-center justify-center text-center px-4">
@@ -170,7 +170,7 @@ export function RatingList({ sites }: RatingListProps) {
                       className={`p-8 flex flex-col items-center justify-center min-w-[240px] ${cardStyle.content} rounded-tr-lg`}
                     >
                       <h3 className="text-gray-900 text-2xl font-bold text-center mb-1 leading-tight">{site.bonus}</h3>
-                      {site.dopBonus && <p className="text-red-600 text-base font-semibold mb-2">{site.dopBonus}</p>}
+                      {site.dopBonus && <p className="text-black text-base font-semibold mb-2">{site.dopBonus}</p>}
                       <p className="text-gray-600 text-sm mb-6">U besplatnim okretima</p>
                       <div className="w-full bg-green-600 hover:bg-green-700 transition-colors text-white font-bold py-4 px-6 rounded-lg text-center uppercase tracking-wide text-sm whitespace-nowrap shadow-md">
                         Registriraj se
@@ -200,14 +200,14 @@ export function RatingList({ sites }: RatingListProps) {
 
                       <div className="flex items-center gap-2 mb-1">
                         <div className="flex gap-0.5">{renderStars(site.rating)}</div>
-                        <span className="text-gray-900 font-bold text-lg">{site.rating.toFixed(1)}</span>
+                        <span className="text-white font-bold text-lg">{site.rating.toFixed(1)}</span>
                       </div>
-                      <p className="text-gray-600 text-[10px] text-center">({formatNumber(site.reviews)} recenzija)</p>
+                      <p className="text-white text-[10px] text-center">({formatNumber(site.reviews)} recenzija)</p>
                     </div>
 
                     <div className={`p-6 flex flex-col items-center justify-center ${cardStyle.content} rounded-tr-lg`}>
                       <h3 className="text-gray-900 text-lg font-bold text-center mb-0.5 leading-tight">{site.bonus}</h3>
-                      {site.dopBonus && <p className="text-red-600 text-xs font-semibold mb-2">{site.dopBonus}</p>}
+                      {site.dopBonus && <p className="text-black text-xs font-semibold mb-2">{site.dopBonus}</p>}
                       <div className="w-full bg-green-600 hover:bg-green-700 transition-colors text-white font-bold py-3 px-4 rounded-lg text-center shadow-md uppercase tracking-wide text-xs whitespace-nowrap">
                         Registriraj se
                       </div>

@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { AdvertiserInfoModal } from "./advertiser-info-modal"
+import Image from 'next/image'
 
 export function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -50,7 +51,9 @@ export function Hero() {
 
           <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-4">
             <div className="text-center">
-              <div className="text-white font-semibold text-sm md:text-sm mb-1">Licencirane</div>
+              <div className="flex flex-row items-center gap-1 text-white font-semibold text-sm md:text-sm mb-1">
+                <Image src="/flag.png" alt="Logo" width={20} height={20} />
+                Licencirane</div>
               <div className="text-white/60 text-xs md:text-xs">100% Legalne</div>
             </div>
             <div className="w-px bg-white/20"></div>

@@ -20,9 +20,9 @@ export const bettingSites: BettingSite[] = [
   {
     id: 1,
     name: "PSK",
-    logo: "/psk.jpg", // Changed from .svg to .jpg
-    bonus: "Dvaput Je Dvaput",
-    dopBonus: "2x100€",
+    logo: "/psk.webp", // Changed from .svg to .jpg
+    bonus: "Dvaput Je Dvaput 2x100€",
+    dopBonus: "",
     url: "https://www.psk.hr/",
     rating: 9.8,
     stars: 5,
@@ -34,7 +34,7 @@ export const bettingSites: BettingSite[] = [
   {
     id: 2,
     name: "Favbet",
-    logo: "/favbet.jpg", // Changed from .svg to .jpg
+    logo: "/favbet.svg", // Changed from .svg to .jpg
     bonus: "Do 300€",
     dopBonus: "+ 30€ Oklade Bez Rizika",
     url: "https://www.favbet.hr/",
@@ -50,7 +50,7 @@ export const bettingSites: BettingSite[] = [
   {
     id: 3,
     name: "SuperSport",
-    logo: "/supersport.jpg", // Changed from .svg to .jpg
+    logo: "/supersport.png", // Changed from .svg to .jpg
     bonus: "Do 100€",
     url: "https://www.supersport.hr/",
     rating: 9.4,
@@ -63,7 +63,7 @@ export const bettingSites: BettingSite[] = [
   {
     id: 4,
     name: "Germania Sport",
-    logo: "/germania.jpg", // Changed from .svg to .jpg
+    logo: "/germania.svg", // Changed from .svg to .jpg
     bonus: "Cash Out na Klađenju Uživo",
     url: "https://www.germaniasport.hr/",
     rating: 9.2,
@@ -75,18 +75,5 @@ export const bettingSites: BettingSite[] = [
     isTrending: true,
   },
 
-  {
-    id: 5,
-    name: "Betclic",
-    logo: "/betclic.jpg", // Changed from .svg to .jpg
-    bonus: "100% Do 20€",
-    dopBonus: "+ 10€ Besplatna Oklada",
-    url: "https://www.betclic.hr/",
-    rating: 9.0,
-    stars: 4,
-    reviews: 3897,
-    badges: [],
-    terms: "18+ • Sigurno klađenje • Licencirano • Primjenjuju se T&C",
-  },
 
 ]
