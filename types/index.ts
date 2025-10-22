@@ -1,0 +1,92 @@
+export interface BettingSite {
+  id: number
+  name: string
+  logo: string
+  bonus: string
+  dopBonus?: string
+  url: string
+  rating: number
+  stars: number
+  reviews: number
+  badges: string[]
+  terms: string
+  isTopRating?: boolean
+  isTopLine?: boolean
+  isPopular?: boolean
+  isTrending?: boolean
+}
+
+export const bettingSites: BettingSite[] = [
+  {
+    id: 1,
+    name: "PSK",
+    logo: "/psk.jpg", // Changed from .svg to .jpg
+    bonus: "Dvaput Je Dvaput",
+    dopBonus: "2x100€",
+    url: "https://www.psk.hr/",
+    rating: 9.8,
+    stars: 5,
+    reviews: 4784,
+    badges: ["TREND"],
+    terms: "18+ • Odgovorno klađenje • Licencirano • Vrijede T&C",
+    isTrending: true,
+  },
+  {
+    id: 2,
+    name: "Favbet",
+    logo: "/favbet.jpg", // Changed from .svg to .jpg
+    bonus: "Do 300€",
+    dopBonus: "+ 30€ Oklade Bez Rizika",
+    url: "https://www.favbet.hr/",
+    rating: 9.5,
+    stars: 5,
+    reviews: 4987,
+    badges: ["NAJBOLJA OCJENA", "VRHUNSKI IZBOR"],
+    terms: "18+ • Odgovorno klađenje • Licencirano • Primjenjuju se T&C",
+    isTopRating: true,
+    isTopLine: true,
+  },
+
+  {
+    id: 3,
+    name: "SuperSport",
+    logo: "/supersport.jpg", // Changed from .svg to .jpg
+    bonus: "Do 100€",
+    url: "https://www.supersport.hr/",
+    rating: 9.4,
+    stars: 5,
+    reviews: 5124,
+    badges: ["POPULARNO"],
+    terms: "18+ • Bezpečna platforma • Provjereno • Igrajte odgovorno",
+    isPopular: true,
+  },
+  {
+    id: 4,
+    name: "Germania Sport",
+    logo: "/germania.jpg", // Changed from .svg to .jpg
+    bonus: "Cash Out na Klađenju Uživo",
+    url: "https://www.germaniasport.hr/",
+    rating: 9.2,
+    stars: 5,
+    reviews: 5541,
+    badges: ["POPULARNO", "TREND"],
+    terms: "18+ • Sigurna igra • Provjereno • Primjenjuju se uvjeti",
+    isPopular: true,
+    isTrending: true,
+  },
+
+  {
+    id: 5,
+    name: "Betclic",
+    logo: "/betclic.jpg", // Changed from .svg to .jpg
+    bonus: "100% Do 20€",
+    dopBonus: "+ 10€ Besplatna Oklada",
+    url: "https://www.betclic.hr/",
+    rating: 9.0,
+    stars: 4,
+    reviews: 3897,
+    badges: [],
+    terms: "18+ • Sigurno klađenje • Licencirano • Primjenjuju se T&C",
+  },
+
+]

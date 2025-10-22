@@ -1,0 +1,313 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Croatian color scheme - white, blue, red, gold, black */
+  --background: oklch(0.99 0 0); /* White */
+  --foreground: oklch(0.15 0 0); /* Black */
+  --card: oklch(0.98 0 0); /* White */
+  --card-foreground: oklch(0.15 0 0); /* Black */
+  --popover: oklch(0.98 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+
+  /* Primary color changed to Croatian red */
+  --primary: oklch(0.52 0.24 25); /* Croatian Red */
+  --primary-foreground: oklch(0.99 0 0); /* White */
+
+  /* Secondary color changed to Croatian blue */
+  --secondary: oklch(0.42 0.18 250); /* Croatian Blue */
+  --secondary-foreground: oklch(0.99 0 0); /* White */
+
+  --muted: oklch(0.92 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+
+  /* Accent color set to gold */
+  --accent: oklch(0.68 0.12 85); /* Gold */
+  --accent-foreground: oklch(0.15 0 0); /* Black */
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.88 0 0);
+  --input: oklch(0.88 0 0);
+  --ring: oklch(0.52 0.24 25);
+  --chart-1: oklch(0.52 0.24 25);
+  --chart-2: oklch(0.42 0.18 250);
+  --chart-3: oklch(0.68 0.12 85);
+  --chart-4: oklch(0.45 0.2 140);
+  --chart-5: oklch(0.5 0.12 245);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.98 0 0);
+  --sidebar-foreground: oklch(0.15 0 0);
+  --sidebar-primary: oklch(0.52 0.24 25);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.95 0 0);
+  --sidebar-accent-foreground: oklch(0.15 0 0);
+  --sidebar-border: oklch(0.88 0 0);
+  --sidebar-ring: oklch(0.52 0.24 25);
+
+  /* Croatian Colors - Red, White, Blue, Gold, Black, Green */
+  --croatia-red: oklch(0.52 0.24 25); /* Vibrant Croatian red */
+  --croatia-red-light: oklch(0.62 0.22 25);
+  --croatia-red-dark: oklch(0.42 0.26 20);
+  --croatia-blue: oklch(0.42 0.18 250); /* Deep Croatian blue */
+  --croatia-blue-light: oklch(0.52 0.16 250);
+  --croatia-blue-dark: oklch(0.32 0.2 245);
+  --croatia-white: oklch(0.99 0 0); /* Pure white */
+  --croatia-cream: oklch(0.96 0.01 85); /* Warm cream with gold hint */
+  --croatia-gold: oklch(0.68 0.12 85); /* Rich gold */
+  --croatia-gold-light: oklch(0.78 0.1 85);
+  --croatia-gold-dark: oklch(0.58 0.14 80);
+  --croatia-grey: oklch(0.5 0 0); /* Neutral grey */
+  --croatia-dark: oklch(0.15 0 0); /* Black */
+  --croatia-green: oklch(0.55 0.15 145); /* Green for buttons */
+  --croatia-green-light: oklch(0.65 0.13 145);
+  --croatia-green-dark: oklch(0.45 0.17 140);
+}
+
+.dark {
+  --background: oklch(0.12 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.15 0 0);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.15 0 0);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.52 0.24 25);
+  --primary-foreground: oklch(0.05 0 0);
+  --secondary: oklch(0.42 0.18 250);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.25 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+  --accent: oklch(0.68 0.12 85);
+  --accent-foreground: oklch(0.05 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.25 0 0);
+  --input: oklch(0.25 0 0);
+  --ring: oklch(0.52 0.24 25);
+  --chart-1: oklch(0.52 0.24 25);
+  --chart-2: oklch(0.42 0.18 250);
+  --chart-3: oklch(0.68 0.12 85);
+  --chart-4: oklch(0.45 0.2 140);
+  --chart-5: oklch(0.5 0.12 245);
+  --sidebar: oklch(0.15 0 0);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.52 0.24 25);
+  --sidebar-primary-foreground: oklch(0.05 0 0);
+  --sidebar-accent: oklch(0.25 0 0);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.25 0 0);
+  --sidebar-ring: oklch(0.52 0.24 25);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Croatian color mappings */
+  --color-croatia-red: var(--croatia-red);
+  --color-croatia-red-light: var(--croatia-red-light);
+  --color-croatia-red-dark: var(--croatia-red-dark);
+  --color-croatia-blue: var(--croatia-blue);
+  --color-croatia-blue-light: var(--croatia-blue-light);
+  --color-croatia-blue-dark: var(--croatia-blue-dark);
+  --color-croatia-white: var(--croatia-white);
+  --color-croatia-cream: var(--croatia-cream);
+  --color-croatia-gold: var(--croatia-gold);
+  --color-croatia-gold-light: var(--croatia-gold-light);
+  --color-croatia-gold-dark: var(--croatia-gold-dark);
+  --color-croatia-grey: var(--croatia-grey);
+  --color-croatia-dark: var(--croatia-dark);
+  --color-croatia-green: var(--croatia-green);
+  --color-croatia-green-light: var(--croatia-green-light);
+  --color-croatia-green-dark: var(--croatia-green-dark);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Croatian Color Utilities */
+.bg-croatia-red {
+  background-color: var(--croatia-red);
+}
+
+.bg-croatia-red-light {
+  background-color: var(--croatia-red-light);
+}
+
+.bg-croatia-red-dark {
+  background-color: var(--croatia-red-dark);
+}
+
+.bg-croatia-blue {
+  background-color: var(--croatia-blue);
+}
+
+.bg-croatia-blue-light {
+  background-color: var(--croatia-blue-light);
+}
+
+.bg-croatia-blue-dark {
+  background-color: var(--croatia-blue-dark);
+}
+
+.bg-croatia-white {
+  background-color: var(--croatia-white);
+}
+
+.bg-croatia-cream {
+  background-color: var(--croatia-cream);
+}
+
+.bg-croatia-gold {
+  background-color: var(--croatia-gold);
+}
+
+.bg-croatia-gold-light {
+  background-color: var(--croatia-gold-light);
+}
+
+.bg-croatia-gold-dark {
+  background-color: var(--croatia-gold-dark);
+}
+
+.bg-croatia-grey {
+  background-color: var(--croatia-grey);
+}
+
+.bg-croatia-dark {
+  background-color: var(--croatia-dark);
+}
+
+.bg-croatia-green {
+  background-color: var(--croatia-green);
+}
+
+.bg-croatia-green-light {
+  background-color: var(--croatia-green-light);
+}
+
+.bg-croatia-green-dark {
+  background-color: var(--croatia-green-dark);
+}
+
+.text-croatia-red {
+  color: var(--croatia-red);
+}
+
+.text-croatia-red-dark {
+  color: var(--croatia-red-dark);
+}
+
+.text-croatia-blue {
+  color: var(--croatia-blue);
+}
+
+.text-croatia-blue-dark {
+  color: var(--croatia-blue-dark);
+}
+
+.text-croatia-gold {
+  color: var(--croatia-gold);
+}
+
+.text-croatia-gold-dark {
+  color: var(--croatia-gold-dark);
+}
+
+.text-croatia-grey {
+  color: var(--croatia-grey);
+}
+
+.text-croatia-dark {
+  color: var(--croatia-dark);
+}
+
+.text-croatia-green {
+  color: var(--croatia-green);
+}
+
+.border-croatia-red {
+  border-color: var(--croatia-red);
+}
+
+.border-croatia-blue {
+  border-color: var(--croatia-blue);
+}
+
+.border-croatia-gold {
+  border-color: var(--croatia-gold);
+}
+
+.border-croatia-green {
+  border-color: var(--croatia-green);
+}
+
+.hover\:bg-croatia-red:hover {
+  background-color: var(--croatia-red);
+}
+
+.hover\:bg-croatia-red-light:hover {
+  background-color: var(--croatia-red-light);
+}
+
+.hover\:bg-croatia-green:hover {
+  background-color: var(--croatia-green);
+}
+
+.hover\:bg-croatia-green-light:hover {
+  background-color: var(--croatia-green-light);
+}
+
+.hover\:text-croatia-red:hover {
+  color: var(--croatia-red);
+}
+
+.hover\:text-croatia-gold:hover {
+  color: var(--croatia-gold);
+}
+
+.hover\:border-croatia-red:hover {
+  border-color: var(--croatia-red);
+}
