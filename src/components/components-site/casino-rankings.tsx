@@ -258,7 +258,7 @@ export function CasinoRankings() {
                       <div className="flex items-center justify-center gap-1 text-red-500 mb-2">
                         <span className="text-sm font-medium">Bonus Dobrodošlice</span>
                       </div>
-                      <div className="text-white font-bold text-2xl leading-tight bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent p-2 rounded">
+                      <div className="text-white font-bold text-xl leading-tight bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent p-2 rounded">
                         {casino.bonus}
                       </div>
                       {casino.dopBonus && (
