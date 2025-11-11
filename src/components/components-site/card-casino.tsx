@@ -94,19 +94,21 @@ export function CardCasino({ casino, onClick }: { casino: any; onClick?: (url: s
                     </div>
                     {/* Button - Center */}
                     <div className="text-center">
-                        <Button
+                        <a
+                            href={casino.url}
+                            target="_blank"
+                            rel="noopener referrer"
+                            className={`inline-block font-semibold px-4 py-2 text-xs w-full max-w-xs relative z-10 shadow-lg hover:opacity-90 transition-opacity ${casino.isTopChoice ? "bg-yellow-400 text-black" : "bg-green-700 text-white"}`}
                             style={{
                                 backgroundColor: casino.isTopChoice ? "#fbbf24" : "#16a34a",
                                 color: casino.isTopChoice ? "#000000" : "#ffffff",
+                                textAlign: "center",
+                                borderRadius: "0.375rem"
                             }}
-                            className={`font-semibold px-4 py-2 text-xs w-full max-w-xs relative z-10 shadow-lg hover:opacity-90 transition-opacity`}
-                            onClick={(e) => {
-                                e.stopPropagation()
-                                if (onClick) onClick(casino.url)
-                            }}
+                            onClick={e => e.stopPropagation()}
                         >
                             IGRAJ ODMAH
-                        </Button>
+                        </a>
                     </div>
                 </div>
                 {/* Tablet Layout (md to lg) */}
@@ -163,19 +165,21 @@ export function CardCasino({ casino, onClick }: { casino: any; onClick?: (url: s
                         </div>
                         {/* Right Column: Button */}
                         <div className="flex-shrink-0" style={{ width: "120px" }}>
-                            <Button
+                            <a
+                                href={casino.url}
+                                target="_blank"
+                                rel="noopener referrer"
+                                className={`inline-block font-semibold px-2 py-3 text-xs w-full h-auto relative z-10 shadow-lg hover:opacity-90 transition-opacity ${casino.isTopChoice ? "bg-yellow-400 text-black" : "bg-green-700 text-white"}`}
                                 style={{
                                     backgroundColor: casino.isTopChoice ? "#fbbf24" : "#16a34a",
                                     color: casino.isTopChoice ? "#000000" : "#ffffff",
+                                    textAlign: "center",
+                                    borderRadius: "0.375rem"
                                 }}
-                                className={`font-semibold px-2 py-3 text-xs w-full h-auto relative z-10 shadow-lg hover:opacity-90 transition-opacity`}
-                                onClick={(e) => {
-                                    e.stopPropagation()
-                                    if (onClick) onClick(casino.url)
-                                }}
+                                onClick={e => e.stopPropagation()}
                             >
                                 IGRAJ ODMAH
-                            </Button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -233,19 +237,21 @@ export function CardCasino({ casino, onClick }: { casino: any; onClick?: (url: s
                         </div>
                         {/* Right Column: Button */}
                         <div className="flex-shrink-0" style={{ width: "140px" }}>
-                            <Button
+                            <a
+                                href={casino.url}
+                                target="_blank"
+                                rel="noopener referrer"
+                                className={`inline-block font-semibold px-3 py-4 text-sm w-full h-auto relative z-10 shadow-lg hover:opacity-90 transition-opacity ${casino.isTopChoice ? "bg-yellow-400 text-black" : "bg-green-700 text-white"}`}
                                 style={{
                                     backgroundColor: casino.isTopChoice ? "#fbbf24" : "#16a34a",
                                     color: casino.isTopChoice ? "#000000" : "#ffffff",
+                                    textAlign: "center",
+                                    borderRadius: "0.375rem"
                                 }}
-                                className={`font-semibold px-3 py-4 text-sm w-full h-auto relative z-10 shadow-lg hover:opacity-90 transition-opacity`}
-                                onClick={(e) => {
-                                    e.stopPropagation()
-                                    if (onClick) onClick(casino.url)
-                                }}
+                                onClick={e => e.stopPropagation()}
                             >
                                 IGRAJ ODMAH
-                            </Button>
+                            </a>
                         </div>
                     </div>
                 </div>

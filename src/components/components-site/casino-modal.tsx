@@ -93,15 +93,15 @@ export function CasinoModal() {
             </div>
 
             {/* CTA Button */}
-            <Button
-              className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 sm:py-3 text-sm sm:text-base"
-              onClick={(e) => {
-                e.stopPropagation()
-                handleModalClick()
-              }}
+            <a
+              href={topCasino.url}
+              target="_blank"
+              rel="noopener referrer"
+              className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 sm:py-3 text-sm sm:text-base inline-block text-center rounded"
+              onClick={e => e.stopPropagation()}
             >
               IGRAJ ODMAH
-            </Button>
+            </a>
 
             <p className="text-xs text-gray-500 text-center mt-2 sm:mt-3">
               * Primjenjuju se uvjeti i odredbe. Samo 18+.
