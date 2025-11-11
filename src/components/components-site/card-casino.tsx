@@ -84,9 +84,12 @@ export function CardCasino({ casino, onClick }: { casino: any; onClick?: (url: s
                             <div className="flex items-center justify-center gap-1 text-red-500 mb-2">
                                 <span className="text-sm font-medium">Bonus dobrodošlice</span>
                             </div>
-                            <div className="text-white font-bold text-lg leading-tight bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent p-2 rounded">
-                                {casino.bonus}
-                            </div>
+                                            <div className="text-white font-bold text-lg leading-tight bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent p-2 rounded">
+                                                {casino.bonus}
+                                            </div>
+                                            {casino.dopBonus && (
+                                                <div className="text-xs text-gray-300 mt-1">{casino.dopBonus}</div>
+                                            )}
                         </div>
                     </div>
                     {/* Button - Center */}
@@ -139,6 +142,9 @@ export function CardCasino({ casino, onClick }: { casino: any; onClick?: (url: s
                                 <span className="text-sm font-medium">Bonus dobrodošlice</span>
                             </div>
                             <div className="text-white font-bold text-lg leading-tight">{casino.bonus}</div>
+                            {casino.dopBonus && (
+                                <div className="text-xs text-gray-300 mt-1">{casino.dopBonus}</div>
+                            )}
                         </div>
                         {/* Features Column */}
                         <div
@@ -206,6 +212,9 @@ export function CardCasino({ casino, onClick }: { casino: any; onClick?: (url: s
                                 <span className="text-xl font-medium">Bonus dobrodošlice</span>
                             </div>
                             <div className="text-white font-bold shadow-xl leading-tight text-2xl">{casino.bonus}</div>
+                            {casino.dopBonus && (
+                                <div className="text-sm text-gray-300 mt-2">{casino.dopBonus}</div>
+                            )}
                         </div>
                         {/* Features Column */}
                         <div
