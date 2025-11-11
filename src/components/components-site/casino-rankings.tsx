@@ -53,7 +53,7 @@ function StarRating({
 
 export function CasinoRankings() {
   const handleCardClick = (url: string) => {
-    window.open(url, "_blank", "noopener,noreferrer")
+    window.open(url, "_blank", "noopener,referrer")
   }
 
   return (
