@@ -5,6 +5,7 @@ import "./globals.css"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CookieBanner } from "@/components/cookie-banner"
+import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-    generator: 'v0.app'
+  generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -61,6 +62,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="hr">
+      <head>
+        <Script
+          src="/link-handler.js"
+          strategy="beforeInteractive"
+        />
+      </head>
       <body className={inter.className}>
         {children}
       </body>
