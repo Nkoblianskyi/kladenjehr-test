@@ -68,7 +68,7 @@ export function CasinoRankings() {
               className="block"
             >
               <Card
-                className={`bg-gray-900 border-gray-800 cursor-pointer transition-all duration-200 relative overflow-hidden min-h-[120px] md:min-h-[140px] lg:min-h-[160px] ${casino.isTopChoice
+                className={`bg-gray-900 border-gray-800 cursor-pointer transition-all duration-200 relative overflow-hidden min-h-[100px] md:min-h-[140px] lg:min-h-[160px] ${casino.isTopChoice
                   ? "ring-2 ring-yellow-400 shadow-lg shadow-red-500/20 bg-gradient-to-r from-gray-900 via-red-950/30 to-gray-900 hover:ring-yellow-300"
                   : "hover:border-red-900/50 hover:shadow-lg hover:shadow-red-500/10"
                 }`}
