@@ -5,8 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { getTopCasino } from "@/data/casinos"
-import { CardCasino } from "./card-casino"
-
+import { CardCasino } from "@/components/card-casino"
 
 export function HowWeRank() {
   const criteria = [
@@ -44,9 +43,6 @@ export function HowWeRank() {
 
   const topCasino = getTopCasino()
 
-  const handleCardClick = (url: string) => {
-    window.open(url, "_blank", "noopener,referrer")
-  }
 
   return (
     <section className="py-12 md:py-16 bg-gradient-to-b from-black to-gray-900">
@@ -81,7 +77,7 @@ export function HowWeRank() {
           <p className="text-sm md:text-base text-gray-300 max-w-2xl mx-auto mb-4">
             Nakon detaljnih testiranja i ocjenjivanja, ovo casino ističe se kao naša preporuka broj 1 za igrače iz Hrvatske.
           </p>
-          <CardCasino casino={topCasino} onClick={handleCardClick} />
+          <CardCasino casino={topCasino} />
         </div>
       </div>
     </section>

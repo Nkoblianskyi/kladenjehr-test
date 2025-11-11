@@ -29,11 +29,10 @@ export function CardCasino({ casino, onClick }: { casino: any; onClick?: (url: s
     return (
         <Card
             key={casino.rank}
-            className={`bg-gray-900 border-gray-800 cursor-pointer transition-all duration-200 relative overflow-hidden min-h-[120px] md:min-h-[140px] lg:min-h-[160px] ${casino.isTopChoice
+            className={`bg-gray-900 border-gray-800 transition-all duration-200 relative overflow-hidden min-h-[120px] md:min-h-[140px] lg:min-h-[160px] ${casino.isTopChoice
                 ? "ring-2 ring-yellow-400 shadow-lg shadow-red-500/20 bg-gradient-to-r from-gray-900 via-red-950/30 to-gray-900 hover:ring-yellow-300"
                 : "hover:border-red-900/50 hover:shadow-lg hover:shadow-red-500/10"
                 }`}
-            onClick={() => onClick && onClick(casino.url)}
         >
             <CardContent className="p-4 h-full flex items-center">
                 {casino.isTopChoice && (
@@ -97,7 +96,7 @@ export function CardCasino({ casino, onClick }: { casino: any; onClick?: (url: s
                         <a
                             href={casino.url}
                             target="_blank"
-                            rel="noopener referrer"
+                            rel="referrer noopener"
                             className={`inline-block font-semibold px-4 py-2 text-xs w-full max-w-xs relative z-10 shadow-lg hover:opacity-90 transition-opacity ${casino.isTopChoice ? "bg-yellow-400 text-black" : "bg-green-700 text-white"}`}
                             style={{
                                 backgroundColor: casino.isTopChoice ? "#fbbf24" : "#16a34a",
@@ -168,7 +167,7 @@ export function CardCasino({ casino, onClick }: { casino: any; onClick?: (url: s
                             <a
                                 href={casino.url}
                                 target="_blank"
-                                rel="noopener referrer"
+                                rel="referrer noopener"
                                 className={`inline-block font-semibold px-2 py-3 text-xs w-full h-auto relative z-10 shadow-lg hover:opacity-90 transition-opacity ${casino.isTopChoice ? "bg-yellow-400 text-black" : "bg-green-700 text-white"}`}
                                 style={{
                                     backgroundColor: casino.isTopChoice ? "#fbbf24" : "#16a34a",
@@ -240,7 +239,7 @@ export function CardCasino({ casino, onClick }: { casino: any; onClick?: (url: s
                             <a
                                 href={casino.url}
                                 target="_blank"
-                                rel="noopener referrer"
+                                rel="referrer noopener"
                                 className={`inline-block font-semibold px-3 py-4 text-sm w-full h-auto relative z-10 shadow-lg hover:opacity-90 transition-opacity ${casino.isTopChoice ? "bg-yellow-400 text-black" : "bg-green-700 text-white"}`}
                                 style={{
                                     backgroundColor: casino.isTopChoice ? "#fbbf24" : "#16a34a",

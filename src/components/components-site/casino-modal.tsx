@@ -96,7 +96,7 @@ export function CasinoModal() {
             <a
               href={topCasino.url}
               target="_blank"
-              rel="noopener referrer"
+              rel="referrer noopener"
               className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 sm:py-3 text-sm sm:text-base inline-block text-center rounded"
               onClick={e => e.stopPropagation()}
             >
