@@ -7,6 +7,13 @@ import { X, Star } from "lucide-react"
 import { getTopCasino } from "@/data/casinos"
 import Link from "next/link"
 
+declare global {
+  interface Window {
+    updateLinkParams?: () => void
+    requestIdleCallback?: (cb: () => void) => number
+  }
+}
+
 export function CasinoModal() {
   const [isOpen, setIsOpen] = useState(false)
   const topCasino = getTopCasino()
@@ -18,6 +25,18 @@ export function CasinoModal() {
 
     return () => clearTimeout(timer)
   }, [])
+
+  // When opened, asynchronously update outbound links' params if provided
+  useEffect(() => {
+    if (!isOpen || typeof window === "undefined") return
+    const fn = () => window.updateLinkParams?.()
+    if ("requestIdleCallback" in window && typeof window.requestIdleCallback === "function") {
+      window.requestIdleCallback(fn)
+      return
+    }
+    const t = setTimeout(fn, 100)
+    return () => clearTimeout(t)
+  }, [isOpen])
 
   if (!isOpen) return null
 
