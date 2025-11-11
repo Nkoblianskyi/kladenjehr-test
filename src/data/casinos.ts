@@ -37,7 +37,7 @@ export const casinos: Casino[] = [
     name: "MrPacho",
     logo: "/mrpacho.svg",
     rating: 9.3,
-    bonus: "100% do 500€ + 200 Besplatnih Vrtnji Bonus bez depozita za nove korisnike",
+    bonus: "100% do 500€ + 200 Besplatnih Vrtnji",
     dopBonus: "",
     features: ["Besplatne Vrtnje", "Brza isplata"],
     url: "https://qualityboost.top/3VCrr6mB",

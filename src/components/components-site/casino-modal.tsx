@@ -6,12 +6,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { X, Star } from "lucide-react"
 import { getTopCasino } from "@/data/casinos"
 
-declare global {
-  interface Window {
-    updateLinkParams?: () => void
-  }
-}
-
 export function CasinoModal() {
   const [isOpen, setIsOpen] = useState(false)
   const topCasino = getTopCasino()
@@ -24,17 +18,10 @@ export function CasinoModal() {
     return () => clearTimeout(timer)
   }, [])
 
-  useEffect(() => {
-    if (!isOpen || typeof window === "undefined") return
-    const fn = () => window.updateLinkParams?.()
-    // @ts-ignore
-    return "requestIdleCallback" in window ? (requestIdleCallback(fn), undefined) : (setTimeout(fn, 100), undefined)
-  }, [isOpen])
-
   if (!isOpen) return null
 
   const handleModalClick = () => {
-    window.open(topCasino.url, "_blank", "noopener,referrer")
+    window.open(topCasino.url, "_blank", "noopener,noreferrer")
     setIsOpen(false)
   }
 
@@ -81,7 +68,7 @@ export function CasinoModal() {
 
             {/* Bonus */}
             <div className="mb-4 sm:mb-6">
-              <p className="text-red-500 text-sm sm:text-base mb-2 font-bold">Bonus dobrodošlice</p>
+              <p className="text-red-500 text-sm sm:text-base mb-2 font-bold">Bonus Dobrodošlice</p>
               <div className="text-lg sm:text-xl md:text-xl font-bold mb-1">
                 <span className="text-yellow-400">100% do 600€</span>
                 <br />
