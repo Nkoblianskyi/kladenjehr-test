@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { X, Star } from "lucide-react"
 import { getTopCasino } from "@/data/casinos"
+import Link from "next/link"
 
 export function CasinoModal() {
   const [isOpen, setIsOpen] = useState(false)
@@ -19,11 +20,6 @@ export function CasinoModal() {
   }, [])
 
   if (!isOpen) return null
-
-  const handleModalClick = () => {
-    window.open(topCasino.url, "_blank", "noopener,referrer")
-    setIsOpen(false)
-  }
 
   return (
     <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
@@ -93,7 +89,7 @@ export function CasinoModal() {
             </div>
 
             {/* CTA Button */}
-            <a
+            <Link
               href={topCasino.url}
               target="_blank"
               rel="referrer noopener"
@@ -101,7 +97,7 @@ export function CasinoModal() {
               onClick={e => e.stopPropagation()}
             >
               IGRAJ ODMAH
-            </a>
+            </Link>
 
             <p className="text-xs text-gray-500 text-center mt-2 sm:mt-3">
               * Primjenjuju se uvjeti i odredbe. Samo 18+.

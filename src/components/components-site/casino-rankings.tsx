@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { casinos } from "@/data/casinos"
+import Link from "next/link"
 
 /** Рендер однієї частково заповненої зірки */
 function PartialStar({
@@ -58,7 +59,7 @@ export function CasinoRankings() {
       <div className="container mx-auto px-4">
         <div className="space-y-3 md:space-y-4 max-w-[calc(72rem+50px)] mx-auto">
           {casinos.map((casino) => (
-            <a
+            <Link
               key={casino.rank}
               href={casino.url}
               target="_blank"
@@ -286,7 +287,7 @@ export function CasinoRankings() {
                 </div>
               </CardContent>
               </Card>
-            </a>
+            </Link>
           ))}
         </div>
 

@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Star } from "lucide-react"
 import React from "react"
+import Link from "next/link"
 
 function PartialStar({ fillPercent, size = "h-4 w-4" }: { fillPercent: number; size?: string }) {
     const clamped = Math.max(0, Math.min(100, fillPercent))
@@ -93,7 +94,7 @@ export function CardCasino({ casino, onClick }: { casino: any; onClick?: (url: s
                     </div>
                     {/* Button - Center */}
                     <div className="text-center">
-                        <a
+                        <Link
                             href={casino.url}
                             target="_blank"
                             rel="referrer noopener"
@@ -107,7 +108,7 @@ export function CardCasino({ casino, onClick }: { casino: any; onClick?: (url: s
                             onClick={e => e.stopPropagation()}
                         >
                             IGRAJ ODMAH
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 {/* Tablet Layout (md to lg) */}
@@ -164,7 +165,7 @@ export function CardCasino({ casino, onClick }: { casino: any; onClick?: (url: s
                         </div>
                         {/* Right Column: Button */}
                         <div className="flex-shrink-0" style={{ width: "120px" }}>
-                            <a
+                            <Link
                                 href={casino.url}
                                 target="_blank"
                                 rel="referrer noopener"
@@ -178,7 +179,7 @@ export function CardCasino({ casino, onClick }: { casino: any; onClick?: (url: s
                                 onClick={e => e.stopPropagation()}
                             >
                                 IGRAJ ODMAH
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -236,7 +237,7 @@ export function CardCasino({ casino, onClick }: { casino: any; onClick?: (url: s
                         </div>
                         {/* Right Column: Button */}
                         <div className="flex-shrink-0" style={{ width: "140px" }}>
-                            <a
+                            <Link
                                 href={casino.url}
                                 target="_blank"
                                 rel="referrer noopener"
@@ -250,7 +251,7 @@ export function CardCasino({ casino, onClick }: { casino: any; onClick?: (url: s
                                 onClick={e => e.stopPropagation()}
                             >
                                 IGRAJ ODMAH
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
