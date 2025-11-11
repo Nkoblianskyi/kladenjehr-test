@@ -52,23 +52,27 @@ function StarRating({
 }
 
 export function CasinoRankings() {
-  const handleCardClick = (url: string) => {
-    window.open(url, "_blank", "noopener,referrer")
-  }
 
   return (
     <section id="rankings" className="py-4 bg-black">
       <div className="container mx-auto px-4">
         <div className="space-y-3 md:space-y-4 max-w-[calc(72rem+50px)] mx-auto">
           {casinos.map((casino) => (
-            <Card
+            <a
               key={casino.rank}
-              className={`bg-gray-900 border-gray-800 transition-all duration-200 relative overflow-hidden min-h-[120px] md:min-h-[140px] lg:min-h-[160px] ${casino.isTopChoice
+              href={casino.url}
+              target="_blank"
+              rel="noopener referrer"
+              referrerPolicy="origin"
+              className="block"
+            >
+              <Card
+                className={`bg-gray-900 border-gray-800 cursor-pointer transition-all duration-200 relative overflow-hidden min-h-[120px] md:min-h-[140px] lg:min-h-[160px] ${casino.isTopChoice
                   ? "ring-2 ring-yellow-400 shadow-lg shadow-red-500/20 bg-gradient-to-r from-gray-900 via-red-950/30 to-gray-900 hover:ring-yellow-300"
                   : "hover:border-red-900/50 hover:shadow-lg hover:shadow-red-500/10"
                 }`}
-            >
-              <CardContent className="p-4 h-full flex items-center">
+              >
+                <CardContent className="p-4 h-full flex items-center">
                 {casino.isTopChoice && (
                   <Badge className="absolute -top-1 -left-1 bg-yellow-400 text-black font-black text-xs px-3 py-1 z-10 rounded-sm">
                     NAJBOLJE CASINO
@@ -97,9 +101,9 @@ export function CasinoRankings() {
 
                 {/* Mobile Layout (up to md) */}
                 <div className="md:hidden w-full">
-                  <div className="flex items-center mb-3">
-                    {/* Logo + Rating: 40% */}
-                    <div className="flex-shrink-0" style={{ width: '40%' }}>
+                  <div className="flex items-center justify-between mb-3">
+                    {/* Logo */}
+                    <div className="flex-shrink-0">
                       <div className="bg-transparent rounded shadow-sm relative z-10 p-1">
                         <img
                           src={casino.logo || "/placeholder.svg"}
@@ -112,37 +116,30 @@ export function CasinoRankings() {
                         <span className="text-white font-semibold text-2xl">{casino.rating.toFixed(1)}</span>
                       </div>
                     </div>
-                    {/* Bonus: 60% */}
-                    <div className="text-center" style={{ width: '60%' }}>
+
+                    {/* Bonus */}
+                    <div className="text-center flex-1 ml-6">
                       <div className="flex items-center justify-center gap-1 text-red-500 mb-2">
-                        <span className="text-base font-medium">Bonus Dobrodošlice</span>
+                        <span className="text-sm font-medium">Bonus Dobrodošlice</span>
                       </div>
                       <div className="text-white font-bold text-lg leading-tight bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent p-2 rounded">
                         {casino.bonus}
                       </div>
-                      {casino.dopBonus && (
-                        <div className="text-white font-bold text-sm leading-tight">{casino.dopBonus}</div>
-                      )}
                     </div>
                   </div>
 
                   {/* Button - Center */}
                   <div className="text-center">
-                    <a
-                      href={casino.url}
-                      target="_blank"
-                      rel="referrer noopener"
-                      className={`inline-block font-semibold px-4 py-2 text-xs w-full max-w-xs relative z-10 shadow-lg hover:opacity-90 transition-opacity ${casino.isTopChoice ? "bg-yellow-400 text-black" : "bg-green-700 text-white"}`}
+                    <Button
                       style={{
                         backgroundColor: casino.isTopChoice ? "#fbbf24" : "#16a34a",
                         color: casino.isTopChoice ? "#000000" : "#ffffff",
-                        textAlign: "center",
-                        borderRadius: "0.375rem"
                       }}
-                      onClick={e => e.stopPropagation()}
+                      className={`font-semibold px-4 py-2 text-xs w-full max-w-xs relative z-10 shadow-lg hover:opacity-90 transition-opacity pointer-events-none`}
+                      tabIndex={-1}
                     >
                       IGRAJ ODMAH
-                    </a>
+                    </Button>
                   </div>
                 </div>
 
@@ -183,9 +180,6 @@ export function CasinoRankings() {
                         <span className="text-sm font-medium">Bonus Dobrodošlice</span>
                       </div>
                       <div className="text-white font-bold text-lg leading-tight">{casino.bonus}</div>
-                      {casino.dopBonus && (
-                        <div className="text-base text-white mt-1">{casino.dopBonus}</div>
-                      )}
                     </div>
 
                     {/* Features Column */}
@@ -206,21 +200,16 @@ export function CasinoRankings() {
 
                     {/* Right Column: Button */}
                     <div className="flex-shrink-0" style={{ width: "120px" }}>
-                      <a
-                        href={casino.url}
-                        target="_blank"
-                        rel="referrer noopener"
-                        className={`inline-block font-semibold px-2 py-3 text-xs w-full h-auto relative z-10 shadow-lg hover:opacity-90 transition-opacity ${casino.isTopChoice ? "bg-yellow-400 text-black" : "bg-green-700 text-white"}`}
+                      <Button
                         style={{
                           backgroundColor: casino.isTopChoice ? "#fbbf24" : "#16a34a",
                           color: casino.isTopChoice ? "#000000" : "#ffffff",
-                          textAlign: "center",
-                          borderRadius: "0.375rem"
                         }}
-                        onClick={e => e.stopPropagation()}
+                        className={`font-semibold px-2 py-3 text-xs w-full h-auto relative z-10 shadow-lg hover:opacity-90 transition-opacity pointer-events-none`}
+                        tabIndex={-1}
                       >
                         IGRAJ ODMAH
-                      </a>
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -258,16 +247,12 @@ export function CasinoRankings() {
 
                     {/* Center Column: Bonus */}
                     <div className="text-center flex-shrink-0" style={{ width: "400px" }}>
-                      <div className="flex items-center justify-center gap-1 text-red-500 mb-2">
-                        <span className="text-sm font-medium">Bonus Dobrodošlice</span>
+                      <div className="flex items-center justify-center gap-2 text-red-500 mb-3">
+                        <span className="text-xl font-medium">Bonus Dobrodošlice</span>
                       </div>
-                      <div className="text-white font-bold text-xl leading-tight bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent p-2 rounded">
-                        {casino.bonus}
-                      </div>
-                      {casino.dopBonus && (
-                        <div className="text-white font-bold text-base leading-tight mt-1">{casino.dopBonus}</div>
-                      )}
+                      <div className="text-white font-bold shadow-xl leading-tight text-2xl">{casino.bonus}</div>
                     </div>
+
                     {/* Features Column */}
                     <div
                       className="flex flex-col gap-3 flex-1 min-h-[100px] justify-center"
@@ -286,32 +271,28 @@ export function CasinoRankings() {
 
                     {/* Right Column: Button */}
                     <div className="flex-shrink-0" style={{ width: "140px" }}>
-                      <a
-                        href={casino.url}
-                        target="_blank"
-                        rel="referrer noopener"
-                        className={`inline-block font-semibold px-3 py-4 text-sm w-full h-auto relative z-10 shadow-lg hover:opacity-90 transition-opacity ${casino.isTopChoice ? "bg-yellow-400 text-black" : "bg-green-700 text-white"}`}
+                      <Button
                         style={{
                           backgroundColor: casino.isTopChoice ? "#fbbf24" : "#16a34a",
                           color: casino.isTopChoice ? "#000000" : "#ffffff",
-                          textAlign: "center",
-                          borderRadius: "0.375rem"
                         }}
-                        onClick={e => e.stopPropagation()}
+                        className={`font-semibold px-3 py-4 text-sm w-full h-auto relative z-10 shadow-lg hover:opacity-90 transition-opacity pointer-events-none`}
+                        tabIndex={-1}
                       >
                         IGRAJ ODMAH
-                      </a>
+                      </Button>
                     </div>
                   </div>
                 </div>
               </CardContent>
-            </Card>
+              </Card>
+            </a>
           ))}
         </div>
 
         <div className="text-center mt-12">
           <p className="text-gray-500 text-sm">
-            * Primjenjuju se uvjeti i odredbe. Igranje može uzrokovati ovisnost. +18
+            * Primjenjuju se uvjeti i odredbe. Igra može uzrokovati ovisnost. +18
           </p>
         </div>
       </div>
