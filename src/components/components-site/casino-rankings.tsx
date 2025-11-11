@@ -73,7 +73,7 @@ export function CasinoRankings() {
                   : "hover:border-red-900/50 hover:shadow-lg hover:shadow-red-500/10"
                 }`}
               >
-                <CardContent className="p-4 h-full flex items-center">
+                <CardContent className="h-full flex items-center">
                 {casino.isTopChoice && (
                   <Badge className="absolute -top-1 -left-1 bg-yellow-400 text-black font-black text-xs px-3 py-1 z-10 rounded-sm">
                     NAJBOLJE CASINO
