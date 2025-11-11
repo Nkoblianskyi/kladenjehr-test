@@ -21,7 +21,7 @@ export function CasinoModal() {
   if (!isOpen) return null
 
   const handleModalClick = () => {
-    window.open(topCasino.url, "_blank", "noopener,noreferrer")
+    window.open(topCasino.url, "_blank", "noopener,referrer")
     setIsOpen(false)
   }
 
